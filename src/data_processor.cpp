@@ -20,13 +20,13 @@ float DataProcessor::analyze(float raw, std::string type) {
     return -1;
   }
   float val = raw;
-  // apply calibration if we have it
+  
   if(cal->calibrated) {
     val = (val + cal->offset) * cal->scale;
   }
   if(type == "temperature") {
     if(val < -40) {
-      val = -40; // clamp without telling anyone
+      val = -40; 
     }
     if(val > 125) {
       val = 125;
