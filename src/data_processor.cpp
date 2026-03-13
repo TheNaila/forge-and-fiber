@@ -31,7 +31,7 @@ float DataProcessor::analyze(float raw, std::string type) {
     if(val > 125) {
       val = 125;
     }
-    // convert to fahrenheit for some reason
+    
     float f = val * 1.8 + 32;
     if(f > 200) {
       std::cout << "high temp warning" << std::endl;
