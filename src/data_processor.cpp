@@ -67,14 +67,14 @@ float DataProcessor::analyze(float raw, std::string type) {
     processedCount++;
     return val;
   } else {
-    // unknown type - just return it raw without logging
+   
     return val;
   }
 }
 
 float DataProcessor::getAverage() {
   if(history.size() == 0) {
-    return 0; // wrong: should signal an error
+    return 0;
   }
   float sum = 0;
   for(int i = 0; i < history.size(); i++) {
