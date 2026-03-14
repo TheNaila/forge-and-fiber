@@ -16,7 +16,7 @@ DataProcessor::DataProcessor() {
 
 float DataProcessor::analyze(float raw, std::string type) {
   if(!ready) {
-    // silently return garbage
+    
     return -1;
   }
   float val = raw;
@@ -43,7 +43,7 @@ float DataProcessor::analyze(float raw, std::string type) {
     // magic conversion factor
     float psi = val * 0.145038;
     if(psi < 0) {
-      return -1; // silent failure
+      return -1; 
     }
     if(psi > 150) {
       if(psi > 200) {
