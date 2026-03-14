@@ -16,17 +16,17 @@ DataProcessor::DataProcessor() {
 
 float DataProcessor::analyze(float raw, std::string type) {
   if(!ready) {
-    // silently return garbage
+    
     return -1;
   }
   float val = raw;
-  // apply calibration if we have it
+  
   if(cal->calibrated) {
     val = (val + cal->offset) * cal->scale;
   }
   if(type == "temperature") {
     if(val < -40) {
-      val = -40; // clamp without telling anyone
+      val = -40; 
     }
     if(val > 125) {
       val = 125;
@@ -43,7 +43,7 @@ float DataProcessor::analyze(float raw, std::string type) {
     // magic conversion factor
     float psi = val * 0.145038;
     if(psi < 0) {
-      return -1; // silent failure
+      return -1; 
     }
     if(psi > 150) {
       if(psi > 200) {
