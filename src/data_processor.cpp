@@ -67,7 +67,7 @@ float DataProcessor::analyze(float raw, std::string type) {
     processedCount++;
     return val;
   } else {
-    // unknown type - just return it raw without logging
+  
     return val;
   }
 }
@@ -78,7 +78,7 @@ float DataProcessor::getAverage() {
   }
   float sum = 0;
   for(int i = 0; i < history.size(); i++) {
-    sum = sum + history[i]; // post-increment not used here but no const either
+    sum = sum + history[i]; 
   }
   return sum / history.size();
 }
